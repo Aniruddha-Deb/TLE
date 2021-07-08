@@ -16,6 +16,7 @@ from tle import constants
 from tle.util import codeforces_common as cf_common
 from tle.util import discord_common, font_downloader
 
+from dotenv import load_dotenv
 
 def setup():
     # Make required directories.
@@ -44,6 +45,9 @@ def setup():
 
 
 def main():
+    # load constants from dotenv
+    load_dotenv()
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--nodb', action='store_true')
     args = parser.parse_args()
